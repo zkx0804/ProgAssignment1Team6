@@ -24,6 +24,8 @@ import lucene.demo.business.HotelDatabase;
  *http://web.cs.ucla.edu/classes/winter15/cs144/projects/lucene/index.html **/
 //test
 
+
+//hello
 public class Indexer {
 
     /** Creates a new instance of Indexer */
