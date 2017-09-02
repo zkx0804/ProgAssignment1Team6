@@ -9,7 +9,8 @@ public class InitLucene {
 	
 	
 	
-	Directory indexDir = FSDirectory.open(new File("index-directory"));
+	Directory indexDir = FSDirectory.open(new File("index-directory").toPath());
+	//test
 	
 	
 }

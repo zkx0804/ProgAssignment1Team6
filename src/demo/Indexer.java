@@ -22,6 +22,7 @@ import lucene.demo.business.HotelDatabase;
 /**This is some demo code from 
  * 
  *http://web.cs.ucla.edu/classes/winter15/cs144/projects/lucene/index.html **/
+//test
 
 public class Indexer {
 
@@ -33,7 +34,7 @@ public class Indexer {
 
     public IndexWriter getIndexWriter(boolean create) throws IOException {
         if (indexWriter == null) {
-            Directory indexDir = FSDirectory.open(new File("index-directory"));
+            Directory indexDir = FSDirectory.open(new File("index-directory").toPath());
             IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
             indexWriter = new IndexWriter(indexDir, config);
         }
@@ -67,13 +68,13 @@ public class Indexer {
           //
           // Index all Accommodation entries
           //
-          Hotel[] hotels = HotelDatabase.getHotels();
-          for(Hotel hotel : hotels) {
-              indexHotel(hotel);
+          //Hotel[] hotels = HotelDatabase.getHotels();
+          //for(Hotel hotel : hotels) {
+          //    indexHotel(hotel);
           }
           //
           // Don't forget to close the index writer when done
           //
-          closeIndexWriter();
+          //closeIndexWriter();
      }
 }
