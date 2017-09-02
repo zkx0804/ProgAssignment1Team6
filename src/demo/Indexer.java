@@ -27,7 +27,9 @@ import lucene.demo.business.HotelDatabase;
 public class Indexer {
 
     /** Creates a new instance of Indexer */
-    public Indexer() {
+	// add new changes
+	//fdasfasdfasdfasdf
+	public Indexer() {
     }
 
     private IndexWriter indexWriter = null;
