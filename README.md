@@ -27,4 +27,6 @@ https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.ht
 Project Github Link:
 https://github.com/zkx0804/ProgAssignment1Team6
 
-
+## Add trec-car tool dependency to project
+This project is using maven to manage denpendencies.
+Please download the trec-car tool to your local disk, use terminal direct to ..\trec-car-tools\java1.7, and use command "mvn clean install" to install the jar to the local .m2 file. Then the project should be able to run locally.
