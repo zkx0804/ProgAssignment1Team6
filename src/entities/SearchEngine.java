@@ -46,7 +46,9 @@ public class SearchEngine {
 			@Override
 			protected float score(BasicStats stats, float freq, float docLen) {
 				// TODO Auto-generated method stub
-				return 0;
+				// System.out.println(stats.toString());
+				// System.out.println("freq: " + freq);
+				return freq;
 			}
 
 			@Override
@@ -57,6 +59,6 @@ public class SearchEngine {
 
 		};
 
-		return null;
+		return sim;
 	}
 }
