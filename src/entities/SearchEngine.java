@@ -6,16 +6,14 @@ import java.nio.file.Paths;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.FieldInvertState;
-import org.apache.lucene.index.LeafReaderContext;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.CollectionStatistics;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.TermStatistics;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.BasicStats;
 import org.apache.lucene.search.similarities.Similarity;
+import org.apache.lucene.search.similarities.SimilarityBase;
 import org.apache.lucene.store.FSDirectory;
 
 public class SearchEngine {
@@ -43,22 +41,16 @@ public class SearchEngine {
 
 	private Similarity createCustomeSimiliarity() {
 
-		Similarity sim = new Similarity() {
+		Similarity sim = new SimilarityBase() {
 
 			@Override
-			public long computeNorm(FieldInvertState state) {
+			protected float score(BasicStats stats, float freq, float docLen) {
 				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			@Override
-			public SimWeight computeWeight(CollectionStatistics collectionStats, TermStatistics... termStats) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public SimScorer simScorer(SimWeight weight, LeafReaderContext context) throws IOException {
+			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
 			}
