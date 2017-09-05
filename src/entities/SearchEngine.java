@@ -11,15 +11,22 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.BasicStats;
+import org.apache.lucene.search.similarities.Similarity;
+import org.apache.lucene.search.similarities.SimilarityBase;
 import org.apache.lucene.store.FSDirectory;
 
 public class SearchEngine {
 	private IndexSearcher searcher = null;
 	private QueryParser parser = null;
 
-	public SearchEngine() throws IOException {
-
+	public SearchEngine(boolean default_engine) throws IOException {
 		searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(Paths.get("./DataSet/Index/"))));
+
+		if (!default_engine) {
+			searcher.setSimilarity(createCustomeSimiliarity());
+		}
+
 		parser = new QueryParser("content", new StandardAnalyzer());
 	}
 
@@ -30,5 +37,28 @@ public class SearchEngine {
 
 	public Document getDocument(int docId) throws IOException {
 		return searcher.doc(docId);
+	}
+
+	private Similarity createCustomeSimiliarity() {
+
+		Similarity sim = new SimilarityBase() {
+
+			@Override
+			protected float score(BasicStats stats, float freq, float docLen) {
+				// TODO Auto-generated method stub
+				// System.out.println(stats.toString());
+				// System.out.println("freq: " + freq);
+				return freq;
+			}
+
+			@Override
+			public String toString() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+		};
+
+		return sim;
 	}
 }

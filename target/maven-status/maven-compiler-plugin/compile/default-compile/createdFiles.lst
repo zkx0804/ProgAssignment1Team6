@@ -2,4 +2,5 @@ entities\ParagraphsIndexer.class
 entities\Paragraph.class
 main\InitSearch.class
 main\ReadDataSet.class
+entities\SearchEngine$1.class
 entities\SearchEngine.class
