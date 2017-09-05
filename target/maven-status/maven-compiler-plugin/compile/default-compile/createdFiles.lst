@@ -1,0 +1,5 @@
+entities\ParagraphsIndexer.class
+entities\Paragraph.class
+main\InitSearch.class
+main\ReadDataSet.class
+entities\SearchEngine.class

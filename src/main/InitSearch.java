@@ -12,21 +12,29 @@ import entities.SearchEngine;
 
 public class InitSearch {
 
+	// Main Function
 	public static void main(String[] args) {
 		String queryStr1 = "power nap benefits";
 		String queryStr2 = "whale vocalization production of sound";
 		String queryStr3 = "pokemon puzzle league";
-		String testQueryStr = "Whatever the cause";
+		int default_size = 10;
 
+		System.out.println("Start reading data set...");
+		System.setProperty("file.encoding", "UTF-8");
+
+		searchWithDefaultEngine(queryStr1, default_size);
+	}
+
+	public static void searchWithDefaultEngine(String queryStr, int size) {
 		try {
 			ArrayList<Paragraph> dataList = ReadDataSet.getAllParagraphFromDataSet();
 
 			ParagraphsIndexer indexer = new ParagraphsIndexer();
 			indexer.rebuildIndexes(dataList);
 
-			System.out.println("Perform search ...");
+			System.out.println("Perform search with search query ===> " + queryStr);
 			SearchEngine se = new SearchEngine();
-			TopDocs topDocs = se.performSearch(testQueryStr, 10);
+			TopDocs topDocs = se.performSearch(queryStr, size);
 
 			System.out.println("Result found: " + topDocs.totalHits);
 			ScoreDoc[] hits = topDocs.scoreDocs;
@@ -42,4 +50,5 @@ public class InitSearch {
 			e.printStackTrace();
 		}
 	}
+
 }

@@ -25,7 +25,7 @@ public class ParagraphsIndexer {
 
 	public IndexWriter getIndexWriter(boolean create) throws IOException {
 		if (indexWriter == null) {
-			Directory indexDir = FSDirectory.open(Paths.get("index-directory"));
+			Directory indexDir = FSDirectory.open(Paths.get("./DataSet/Index/"));
 			IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
 
 			if (create) {
@@ -51,11 +51,13 @@ public class ParagraphsIndexer {
 
 	public void indexParagraph(Paragraph p) throws IOException {
 		if (p != null) {
-			System.out.println("Indexing paragraph -->ID: " + p.getParaID());
+			// System.out.println("Indexing paragraph -->ID: " + p.getParaID());
 			IndexWriter writer = getIndexWriter(false);
 			Document doc = new Document();
 			doc.add(new StringField("id", p.getParaID(), Store.YES));
 			doc.add(new TextField("text", p.getParaText(), Store.YES));
+
+			doc.add(new TextField("content", p.getParaText(), Store.NO));
 
 			writer.addDocument(doc);
 		} else {

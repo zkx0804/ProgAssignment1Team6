@@ -46,7 +46,7 @@ public class ReadDataSet {
 		} catch (CborException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Get " + pList.size() + " paragraphs in total.");
+		System.out.println("Get " + pList.size() + " paragraphs in total by Treccar-tool.");
 		return pList;
 	}
 
@@ -67,7 +67,7 @@ public class ReadDataSet {
 	public static void readingDataFiles() throws CborException {
 		File file = new File("./DataSet/test200/train.test200.cbor.paragraphs");
 		FileInputStream fis = null;
-
+		Data.Paragraph testP = null;
 		try {
 			fis = new FileInputStream(file);
 			System.out.println("Total file size to read (in bytes) : " + fis.available());
@@ -75,13 +75,23 @@ public class ReadDataSet {
 			for (Data.Paragraph p : DeserializeData.iterableParagraphs(fis)) {
 				System.out.println(p.getParaId());
 				// System.out.print(p.getEntitiesOnly());
-				System.out.println(p.getTextOnly());
+
+				// System.out.println(p.getBodies());
 				System.out.println();
+
+				if (p.getParaId().equalsIgnoreCase("fee82b9f00a6f7b83b9611fcdb4d11fb091d930a")) {
+					testP = p;
+				}
+
 			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Find match:");
+		System.out.println(testP.getTextOnly());
+		System.out.println("============");
+		System.out.println(testP.getBodies());
 	}
 
 }
