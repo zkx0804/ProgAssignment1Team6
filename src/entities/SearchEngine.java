@@ -18,6 +18,7 @@ public class SearchEngine {
 	private QueryParser parser = null;
 
 	public SearchEngine() throws IOException {
+		DirectoryReader dir = DirectoryReader.open(FSDirectory.open(Paths.get("index-directory")));
 		searcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open(Paths.get("index-directory"))));
 		parser = new QueryParser("content", new StandardAnalyzer());
 	}

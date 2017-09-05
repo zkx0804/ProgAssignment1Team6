@@ -12,17 +12,21 @@ import entities.Paragraph;
 
 public class ReadDataSet {
 
-	public ReadDataSet() {
-
-	}
-
+	// Only used for testing reading data set.
 	public static void main(String[] args) throws Exception {
 		System.out.println("Start reading data set...");
 		System.setProperty("file.encoding", "UTF-8");
+
 		readingDataFiles();
+
+		// ArrayList<Paragraph> list = new ArrayList<Paragraph>();
+		// list = getAllParagraphFromDataSet();
+		// System.out.println("List size: " + list.size());
+		// System.out.println(list);
+
 	}
 
-	public ArrayList<Paragraph> getAllParagraphFromDataSet() {
+	public static ArrayList<Paragraph> getAllParagraphFromDataSet() {
 		ArrayList<Paragraph> pList = new ArrayList<Paragraph>();
 		String dataFilePath = "./DataSet/test200/train.test200.cbor.paragraphs";
 
@@ -46,7 +50,7 @@ public class ReadDataSet {
 		return pList;
 	}
 
-	public FileInputStream readingDataFiles(String dataFilesPath) {
+	public static FileInputStream readingDataFiles(String dataFilesPath) {
 		File file = new File(dataFilesPath);
 		try {
 			FileInputStream fis = new FileInputStream(file);

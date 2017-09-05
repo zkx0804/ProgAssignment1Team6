@@ -25,7 +25,7 @@ public class ParagraphsIndexer {
 
 	public IndexWriter getIndexWriter(boolean create) throws IOException {
 		if (indexWriter == null) {
-			Directory indexDir = FSDirectory.open(Paths.get("./DataSet/Index"));
+			Directory indexDir = FSDirectory.open(Paths.get("index-directory"));
 			IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
 
 			if (create) {
