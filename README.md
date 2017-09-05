@@ -1,5 +1,6 @@
 # ProgAssignment1Team6
 Team 6: Programming Assignment 1
+Team members: Hua Jiang, Kaixin Zhang, Kunpeng Xie, Tu Lan
 
 Required Tools:
 Java Version: 1.8.0
