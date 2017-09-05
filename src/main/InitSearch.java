@@ -33,7 +33,12 @@ public class InitSearch {
 			indexer.rebuildIndexes(dataList);
 
 			System.out.println("Perform search with search query ===> " + queryStr);
-			SearchEngine se = new SearchEngine();
+
+			/*
+			 * SearchEngine(boolean default_engine), while true using default
+			 * Lucene scoring function.
+			 */
+			SearchEngine se = new SearchEngine(true);
 			TopDocs topDocs = se.performSearch(queryStr, size);
 
 			System.out.println("Result found: " + topDocs.totalHits);
@@ -41,7 +46,7 @@ public class InitSearch {
 
 			for (int i = 0; i < hits.length; i++) {
 				Document doc = se.getDocument(hits[i].doc);
-				System.out.println(doc.get("id") + " " + doc.get("text") + " (" + hits[i].score + ")");
+				System.out.println((i + 1) + ". " + doc.get("id") + " " + doc.get("text") + " (" + hits[i].score + ")");
 
 			}
 			System.out.println("performSearch done");
