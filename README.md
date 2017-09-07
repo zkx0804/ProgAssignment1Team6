@@ -11,11 +11,13 @@ Git
 ## Download:
 Maven: https://maven.apache.org/download.cgi
 Git Download: https://git-scm.com/downloads
+Eclipse Download: http://www.eclipse.org/downloads/packages/release/Mars/2  (Windows, MacOX and Linux)
 
 ## Installation Guide:
 Maven: https://maven.apache.org/install.html
 		For windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/
 Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Eclipse: https://developer.atlassian.com/docs/getting-started/set-up-the-atlassian-plugin-sdk-and-build-a-project/set-up-the-eclipse-ide-for-linux
 
 ## Some useful tips for git:
 Add existing project: 
