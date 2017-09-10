@@ -35,7 +35,13 @@ https://github.com/zkx0804/ProgAssignment1Team6
 Please download the trec-car tool to your local disk, use terminal direct to ..\trec-car-tools\java1.7, and use command "mvn clean install" to install the jar to the local .m2 file. Then the project should be able to run locally.
 
 
-## Run project locally
+
+## Run project using Maven in terminal
+1. Make sure the treccar-tool-1.4.jar is in .m2 file. File should be .m2\repository\edu\unh\cs\treccar\treccar-tools\1.4
+2. Clone the ProgAssignment1Team6 repo, then cd into the directory
+3. Run command: mvn exec:java -Dexec.mainClass="main.InitSearch"
+
+## Run project using Eclipse
 This project is using maven to manage denpendencies.
 If you're using Eclipse for Java editor:
 1. import -> Existing Maven Project.
