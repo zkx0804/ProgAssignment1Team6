@@ -39,7 +39,7 @@ Please download the trec-car tool to your local disk, use terminal direct to ..\
 ## Run project using Maven in terminal
 1. Make sure the treccar-tool-1.4.jar is in .m2 file. File should be .m2\repository\edu\unh\cs\treccar\treccar-tools\1.4
 2. Clone the ProgAssignment1Team6 repo, then cd into the directory
-3. Run command: mvn exec:java -Dexec.mainClass="main.InitSearch"
+3. Run maven command:    mvn exec:java -Dexec.mainClass="main.InitSearch"
 
 ## Run project using Eclipse
 This project is using maven to manage denpendencies.
