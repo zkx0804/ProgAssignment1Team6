@@ -23,7 +23,8 @@ public class InitSearch {
 		String queryStr3 = "pokemon puzzle league";
 
 		/*
-		 * Change this boolean to use custom scoring function for Question 4
+		 * Change this boolean to false to use custom scoring function for
+		 * Question 4
 		 */
 		boolean useDefaultScoringFunc = true;
 

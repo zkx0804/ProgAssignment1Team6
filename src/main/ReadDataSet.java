@@ -13,18 +13,18 @@ import entities.Paragraph;
 public class ReadDataSet {
 
 	// Only used for testing reading data set.
-	public static void main(String[] args) throws Exception {
-		System.out.println("Start reading data set...");
-		System.setProperty("file.encoding", "UTF-8");
-
-		readingDataFiles();
-
-		// ArrayList<Paragraph> list = new ArrayList<Paragraph>();
-		// list = getAllParagraphFromDataSet();
-		// System.out.println("List size: " + list.size());
-		// System.out.println(list);
-
-	}
+	// public static void main(String[] args) throws Exception {
+	// System.out.println("Start reading data set...");
+	// System.setProperty("file.encoding", "UTF-8");
+	//
+	// readingDataFiles();
+	//
+	// // ArrayList<Paragraph> list = new ArrayList<Paragraph>();
+	// // list = getAllParagraphFromDataSet();
+	// // System.out.println("List size: " + list.size());
+	// // System.out.println(list);
+	//
+	// }
 
 	public static ArrayList<Paragraph> getAllParagraphFromDataSet() {
 		ArrayList<Paragraph> pList = new ArrayList<Paragraph>();
